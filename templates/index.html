@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Pass Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}?v=2">
+</head>
+
+<body>
+
+    <main class="page-container">
+
+        <header class="page-header">
+            <span class="eyebrow">STUDENT PERFORMANCE ANALYSIS</span>
+
+            <h1>Student Pass Prediction</h1>
+
+            <p>
+                Enter the student's details to predict their
+                academic performance.
+            </p>
+        </header>
+
+        <form action="/predict" method="POST">
+
+            <!-- Student Details -->
+            <fieldset>
+
+                <label for="school">School
+                    <select id="school" name="school" required>
+                        <option value="GP">GP</option>
+                        <option value="MS">MS</option>
+                    </select>
+                </label>
+
+                <label for="sex">Sex
+                    <select id="sex" name="sex" required>
+                        <option value="F">Female</option>
+                        <option value="M">Male</option>
+                    </select>
+                </label>
+
+                <label for="age">Age
+                    <input id="age" type="number" name="age"
+                           min="15" max="22" required>
+                </label>
+
+                <label for="Pstatus">Parents' Cohabitation Status
+                    <select id="Pstatus" name="Pstatus" required>
+                        <option value="T">Living together</option>
+                        <option value="A">Apart</option>
+                    </select>
+                </label>
+
+                <label for="Medu">Mother's Education (0–4)
+                    <input id="Medu" type="number" name="Medu"
+                           min="0" max="4" required>
+                </label>
+
+                <label for="Fedu">Father's Education (0–4)
+                    <input id="Fedu" type="number" name="Fedu"
+                           min="0" max="4" required>
+                </label>
+
+                <label for="Mjob">Mother's Job
+                    <select id="Mjob" name="Mjob" required>
+                        <option value="at_home">At home</option>
+                        <option value="health">Health</option>
+                        <option value="other">Other</option>
+                        <option value="services">Services</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                </label>
+
+                <label for="Fjob">Father's Job
+                    <select id="Fjob" name="Fjob" required>
+                        <option value="at_home">At home</option>
+                        <option value="health">Health</option>
+                        <option value="other">Other</option>
+                        <option value="services">Services</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                </label>
+
+                <label for="guardian">Guardian
+                    <select id="guardian" name="guardian" required>
+                        <option value="mother">Mother</option>
+                        <option value="father">Father</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+
+                <label for="schoolsup">Extra Educational Support
+                    <select id="schoolsup" name="schoolsup" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </label>
+
+                <label for="famsup">Family Educational Support
+                    <select id="famsup" name="famsup" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </label>
+
+                <label for="paid">Extra Paid Classes
+                    <select id="paid" name="paid" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </label>
+
+                <label for="activities">Extracurricular Activities
+                    <select id="activities" name="activities" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </label>
+
+                <label for="nursery">Attended Nursery School
+                    <select id="nursery" name="nursery" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </label>
+
+                <label for="higher">Wants Higher Education
+                    <select id="higher" name="higher" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </label>
+
+                <label for="internet">Internet Access at Home
+                    <select id="internet" name="internet" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </label>
+
+                <label for="failures">Past Class Failures (0–3)
+                    <input id="failures" type="number"
+                           name="failures" min="0" max="3" required>
+                </label>
+
+                <label for="goout">Going Out with Friends (1–5)
+                    <input id="goout" type="number"
+                           name="goout" min="1" max="5" required>
+                </label>
+
+                <label for="Dalc">Workday Alcohol Consumption (0–5)
+                    <input id="Dalc" type="number"
+                           name="Dalc" min="0" max="5" required>
+                </label>
+
+                <label for="health">Current Health (1–5)
+                    <input id="health" type="number"
+                           name="health" min="1" max="5" required>
+                </label>
+
+                <label for="absences">School Absences
+                    <input id="absences" type="number"
+                           name="absences" min="0" required>
+                </label>
+            </fieldset>
+
+            <button type="submit">
+                Predict Student Performance
+                <span aria-hidden="true"> →</span>
+            </button>
+
+            <p class="footer-note">
+                Student Performance Prediction System
+            </p>
+
+        </form>
+
+    </main>
+
+</body>
+</html>
